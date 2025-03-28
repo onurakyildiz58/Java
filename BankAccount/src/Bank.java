@@ -1,10 +1,23 @@
 public class Bank {
 	private String accountNumber;
-	private int accountBalance;
+	private double accountBalance;
 	private String userName;
 	private String userMail;
-	private int userPhoneNumber;
+	private String userPhoneNumber;
 
+	public Bank() {
+		System.out.println("empty constructor called");
+	}
+	
+	public Bank(String accountNumber, double accountBalance, String userName, String userMail, String userPhoneNumber) {
+		System.out.println("accoutn constructor called with data");
+		this.accountNumber = accountNumber;
+		this.accountBalance = accountBalance;
+		this.userName = userName;
+		this.userMail = userMail;
+		this.userPhoneNumber = userPhoneNumber;
+	}
+	
 	public void setAccountNumber(String accountNumber) {
 		this.accountNumber = accountNumber;
 	}
@@ -21,7 +34,7 @@ public class Bank {
 		this.userMail = userMail;
 	}
 
-	public void setUserPhoneNumber(int userPhoneNumber) {
+	public void setUserPhoneNumber(String userPhoneNumber) {
 		this.userPhoneNumber = userPhoneNumber;
 	}
 
@@ -33,17 +46,17 @@ public class Bank {
 		System.out.println(userPhoneNumber + " : telefon numarası");
 	}
 
-	public void withdrawMoney(int amount) {
+	public void withdrawMoney(double amount) {
 		if (this.accountBalance - amount <= 0) {
 			System.out.println("paran yok aga");
 		} else {
-			this.accountBalance = this.accountBalance - amount;
+			this.accountBalance = (double) this.accountBalance - amount;
 			System.out.println("yeni bakiye : " + this.accountBalance);
 		}
 	}
 
-	public void depositMoney(int amount) {
-		this.accountBalance = this.accountBalance + amount;
+	public void depositMoney(double amount) {
+		this.accountBalance = (double) this.accountBalance + amount;
 		System.out.println("yeni bakiye : " + this.accountBalance);
 	}
 
