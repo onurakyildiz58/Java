@@ -26,7 +26,7 @@ public class Bank {
 		this.accountBalance = accountBalance;
 	}
 
-	public void setUserName(String userName) {
+	public void setUserName(String userName) {	
 		this.userName = userName;
 	}
 
